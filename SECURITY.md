@@ -1,35 +1,17 @@
-# 安全和脱敏边界
+# Security
 
-这个仓库只应该存放可公开或可分享的模板、说明、Prompt 和示例配置。
+这个项目是公开模板仓库，只应该包含可分享的流程、Prompt、模板和示例配置。
 
-## 不允许提交
+## 不应提交的内容
 
-- API key
-- GitHub token
-- OpenAI key
-- 飞书 webhook
-- Cookie
-- 浏览器登录态
-- 真实客户资料
-- 真实朋友资料
-- 历史日报全文
-- 自动化运行日志
-- 本地绝对路径
-- Obsidian vault 个人上下文
-- `.obsidian/`
-- `.git/`
-- `.claude/`
-- `.codex/`
-- `.agents/`
-
-## 允许提交
-
-- 脱敏后的流程说明
-- 空白配置模板
-- 示例关键词
-- 示例日报结构
-- Codex 启动 Prompt
-- 脱敏检查脚本
+- API key、token、webhook、Cookie
+- 浏览器登录态或平台账号凭据
+- 真实客户、朋友、团队成员资料
+- 历史日报全文和自动化运行日志
+- 个人 Obsidian vault 内容
+- 本地绝对路径和私有脚本路径
+- 未脱敏的自动化脚本
+- `.obsidian/`、`.claude/`、`.codex/`、`.agents/` 等本地工作区目录
 
 ## 上传前检查
 
@@ -39,5 +21,9 @@
 powershell -ExecutionPolicy Bypass -File .\scripts\sanitize-check.ps1
 ```
 
-如果脚本报出高风险命中，先处理后再上传。
+如果脚本报出高风险命中，先处理后再提交。
+
+## 公开项目建议
+
+公开仓库里保留模板和方法论，不保留真实运行数据。真实日报、推送配置和个人工作流建议放在私有仓库或本地知识库中。
 
